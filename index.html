@@ -11,21 +11,8 @@
 
 <main>
     <div class="mainWrapper">
-        
-        <div class="askButtonWrapper">
-            <button class="AddBookButton" onclick="openForm()">New Book</button>
-        </div>
-        <div class="headingWrapper">
-            <div class="topDiv">
-                <div class="title">Title</div>
-                <div class="author">Author</div>
-                <div class="pages">Pages</div>
-                <div class="status">Status</div>
-            </div>
-        </div>
-    </div>
 
-
+    <div class="titleOfProject">Welcome to Maddy's Library</div>
 
 
     <div class="loginContainer">
@@ -33,13 +20,13 @@
             <form class="popUpForm" id="popUp">
 
                 <label>Book Title</label><br>
-                <input id="title" name="title" type="text" placeholder="Enter Book Name" required><br>
+                <input id="title" name="title" type="text" placeholder="Enter Book Name" maxlength="50" required><br>
 
                 <label>Author</label><br>
-                <input id="author" name="author" type="text" placeholder="Enter Author Name" required><br>
+                <input id="author" name="author" type="text" placeholder="Enter Author Name" maxlength="30" required><br>
 
                 <label>Pages</label><br>
-                <input id="pages" name="pages" type="number" placeholder="Enter Book Pages" required><br>
+                <input id="pages" name="pages" type="text" placeholder="Enter Book Pages" pattern="\d*" maxlength="5" required><br>
 
                 <label id="warning" class="warning"></label><br>
 
@@ -47,6 +34,14 @@
                 <button id="close" class="close" onclick="closeForm()">Close</button><br>
             </form>
         </div>
+    </div>
+
+    <div class="mainCardContainer">
+
+    </div>
+
+    <div class="askButtonWrapper">
+        <button class="AddBookButton" onclick="openForm()">Add Book To Library</button>
     </div>
 
 
