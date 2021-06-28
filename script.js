@@ -41,6 +41,7 @@ function closeForm(){
 
 
   addBookToLibrary();
+  defaultBook();//show the default value at first initialization.
 
   makeBookArray.prototype = Object.create(Book.prototype);
   function makeBookArray(){
@@ -58,7 +59,7 @@ function closeForm(){
 
     createBook();
     
-    }else if((typeof(this.pages) != 'number' || this.pages <= 0 ) && (this.title != '' && this.author != '') && this.pages !== ''){
+    }else if(typeof((this.pages) != 'number' || this.pages <=0) && this.pages === ''){
       
       warning.textContent = 'Enter Valid PageNumber';
 
@@ -67,39 +68,62 @@ function closeForm(){
     }
   }
 
+  function defaultBook(){
+
+    let defaultCount = 0;
+    if(defaultCount == 0){
+    const topdiv =document.createElement('div');
+    topdiv.className = 'topDiv';
+    headingWrapper.appendChild(topdiv);
+    
+
+    for(let key of Object.keys(myLibrary[myLibrary.length-1])){
+
+      const div = document.createElement('div');
+      topdiv.appendChild(div);
+
+      div.textContent = myLibrary[myLibrary.length-1][key];
+    }
+    statusButton(topdiv);
+    deleteButton(topdiv,myLibrary.length-1);
+    defaultCount = 1;
+  }
+}
+
   function createBook(){
-    for(let i=0; i<myLibrary.length; i++){
 
       const topdiv =document.createElement('div');
       topdiv.className = 'topDiv';
       headingWrapper.appendChild(topdiv);
       
 
-      for(let key of Object.keys(myLibrary[i])){
+      for(let key of Object.keys(myLibrary[myLibrary.length-1])){
 
         const div = document.createElement('div');
-        topdiv.appendChild(div)
+        topdiv.appendChild(div);
 
-        div.textContent = myLibrary[i][key];
+        div.textContent = myLibrary[myLibrary.length-1][key];
       }
       statusButton(topdiv);
-      deleteButton(topdiv,i);
-    }
+      deleteButton(topdiv,myLibrary.length-1);
   }
 
   function statusButton(parent){
     const statusButton = document.createElement('button');
     statusButton.className = 'statusButton';
-    statusButton.textContent = 'Not Read'
+    statusButton.textContent = 'Not Read';
+    statusButton.style.cssText = ('background-color : red; border-radius: 5px');
     parent.appendChild(statusButton);
     count = 0;
 
     statusButton.addEventListener('click',() => {
       if(count == 0){
         statusButton.textContent = 'Read';
-        count++
+        statusButton.style.cssText = ('background-color : green;');
+        count++;
       }else{
         statusButton.textContent = 'Not Read';
+        statusButton.style.cssText = ('background-color : red;');
         count--;
       }
     })

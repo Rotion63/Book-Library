@@ -3,9 +3,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+  background: url('./background.jpg');
+  width: 100%;
+}
 
 main{
+
 }
+
 .mainWrapper{
   width: 75%;
   margin-left: 12.5%;
@@ -17,8 +23,15 @@ main{
   justify-content: center;
   height: 40px;
 }
-.addButton{
 
+.askButtonWrapper button{
+  width: 100px;
+  background-color: turquoise;
+  border-radius: 10px;
+}
+
+.askButtonWrapper button:hover{
+  background-color:rgb(63, 168, 158);
 }
 
 .headingWrapper{
@@ -28,16 +41,24 @@ main{
 }
 
 .topDiv{
+    background-color: rgb(0, 255, 255);
+    color: rgb(0, 0, 0);
     display: grid;
-    opacity: 50%;
     margin-top: 10px;
-    background-color: rgb(130, 192, 253);
-    color: blue;
+    height: 40px;
     grid-template-columns: repeat(5,1fr);
 }
 
 .topDiv div{
+  margin-top: 6.25%;
+    align-items: center;
     text-align: center;
+}
+.topDiv button{
+  margin-top: 3.125%;
+  height: 30px;
+  border-radius: 5px;
+  background-color: red;
 }
 
 .loginContainer{
@@ -60,7 +81,7 @@ main{
   max-width: 250px;
   border-radius: 20px;
   padding: 20px;
-  background-color: yellow;
+  background-color: rgb(0, 255, 42);
 }
 
 .popUpForm input{
@@ -81,3 +102,9 @@ main{
 .warning{
   color: red;
 }
+
+.statusButton .deleteButton{
+
+    border-radius: 5px;
+}
+
