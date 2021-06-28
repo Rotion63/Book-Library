@@ -1,0 +1,83 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
+}
+.mainWrapper{
+  width: 75%;
+  margin-left: 12.5%;
+  margin-top: 50px;
+}
+
+.askButtonWrapper{
+  display: flex;
+  justify-content: center;
+  height: 40px;
+}
+.addButton{
+
+}
+
+.headingWrapper{
+  margin: 0 auto;
+  margin-top: 30px;
+  width: inherit;
+}
+
+.topDiv{
+    display: grid;
+    opacity: 50%;
+    margin-top: 10px;
+    background-color: rgb(130, 192, 253);
+    color: blue;
+    grid-template-columns: repeat(5,1fr);
+}
+
+.topDiv div{
+    text-align: center;
+}
+
+.loginContainer{
+  display: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.popUpContainer{
+  position: fixed;
+  left: 45%;
+  top: 5%;
+  transform: translate(-50%, 5%);
+  border-radius: 20px;
+  border: 3px solid #999999;
+  z-index: 9;
+}
+
+.popUpForm{
+  max-width: 250px;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: yellow;
+}
+
+.popUpForm input{
+  height: 40px;
+}
+
+.popUpForm button{
+  border-radius: 0px;
+  margin-bottom: 5px;
+  width: 200px;
+  height: 40px;
+}
+
+.addBook{
+  margin-top: 20px;
+}
+
+.warning{
+  color: red;
+}
