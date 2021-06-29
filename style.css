@@ -194,7 +194,20 @@ margin-left: 25%;
     text-align: center;
     color:rgb(108, 255, 152);
     font-weight: bold;
-    margin-top: 25%;
+    margin-top: 100px;
     margin-left: 25%;
+  }
+
+  .topDiv{
+    display: block;
+    max-width: 250px;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #63d471;
+    background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+    border: 3px solid #999999;
+    opacity: 90%;
+    transform: translate(-10%);
   }
 }
