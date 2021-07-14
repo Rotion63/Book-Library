@@ -24,50 +24,59 @@ function closeForm(){
   let myLibrary = [];
 
 
-  function Book(title,author,pages) {
+  class Book{
     // the constructor...
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
+    constructor(title,author,pages){
+      this.title = title;
+      this.author = author;
+      this.pages = pages;
+    }
   }
 
-  addBookToLibrary.prototype = Object.create(Book.prototype);
 
-  function addBookToLibrary() {
+  class addBookToLibrary extends Book {
     // do stuff here
+    constructor(title,author,pages){
+      super(title,author,pages);
+    }
 
-    const nonFiction = new Book('The Subtle Art Of Not Giving a Fuck','Mark Mansion',224);
-    myLibrary.push(nonFiction);
+    nonFiction(){
+      const nonFiction = new Book('The Subtle Art Of Not Giving a Fuck','Mark Mansion',224);
+      myLibrary.push(nonFiction);
+    }
+
 
 }
 
 
-  addBookToLibrary();
+  new addBookToLibrary().nonFiction();
   defaultBook();//show the default value at first initialization.
 
-  makeBookArray.prototype = Object.create(Book.prototype);
-  function makeBookArray(){
+  class makeBookArray extends Book{
 
-    this.title = form.elements['title'].value;
-    this.author = form.elements['author'].value;
-    this.pages = form.elements['pages'].value;
-
-    if(this.title != '' && this.author != '' && this.pages > 0){
-
-    const book = new Book(this.title,this.author,this.pages);
-    myLibrary.push(book);
-    form.reset();
-    warning.textContent = '';
-
-    createBook();
-    
-    }else if(typeof((this.pages) != 'number' || this.pages <=0) && this.pages === ''){
+    makeBookArray(){
+      this.title = form.elements['title'].value;
+      this.author = form.elements['author'].value;
+      this.pages = form.elements['pages'].value;
+  
+      if(this.title != '' && this.author != '' && this.pages > 0){
+  
+      const book = new Book(this.title,this.author,this.pages);
+      myLibrary.push(book);
+      form.reset();
+      warning.textContent = '';
+  
+      createBook();
       
-      warning.textContent = 'Enter Valid PageNumber';
-
-    }else{
-      warning.textContent = 'Please Enter all data.';
+      }else if(typeof((this.pages) != 'number' || this.pages <=0) && this.pages === ''){
+        
+        warning.textContent = 'Enter Valid PageNumber';
+  
+      }else{
+        warning.textContent = 'Please Enter all data.';
+      }
     }
+
   }
 
   function defaultBook(){
